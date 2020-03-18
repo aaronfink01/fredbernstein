@@ -3,9 +3,6 @@ from flask import render_template, redirect, request, session
 from bson.objectid import ObjectId
 from flask_pymongo import PyMongo
 
-from requests import get
-from bs4 import BeautifulSoup
-
 # Connect to mongo database
 app.config['MONGO_DBNAME'] = 'database'
 app.config['MONGO_URI'] = 'mongodb+srv://admin:O6KsXSod8NVZLCPb@cluster0-udhtk.mongodb.net/database?retryWrites=true&w=majority'
