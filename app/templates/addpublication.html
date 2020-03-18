@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add Publication</h1>
+    <form method="post" action="/admin/addpublication/submit">
+        <div class="form-group">
+            <label>Publication</label>
+            <input type="text" name="publication" class="form-control">
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

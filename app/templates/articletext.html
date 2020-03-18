@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ article.title }}</h1>
+    <h6>Published in {{ article.publication }}</h6>
+    <h6 class='margin-bottom'>{{article.date }} </h6>
+    <h5 class='margin-bottom'>{{ article.subtitle }}</h5>
+    {% for paragraph in article.paragraphs %}
+        <p>{{ paragraph }}</p>
+    {% endfor %}
+{% endblock %}

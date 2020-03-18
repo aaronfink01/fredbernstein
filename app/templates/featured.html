@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="page-title" id="featured-page-title">Featured Articles (aka Fred's Favorites)</h1>
+    <div class="row">
+        <div class="col">
+            {% for article in articles %}
+                {% if loop.index0 % 2 == 0 %}
+                    <div class="card featured shadow">
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
+                            <h4 class="card-text">{{ article.subtitle }}</h4>
+                            <h5>{{ article.publication }}, {{ article.date }}</h5>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col">
+            {% for article in articles %}
+                {% if loop.index0 % 2 == 1 %}
+                    <div class="card featured shadow">
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
+                            <h4 class="card-text">{{ article.subtitle }}</h4>
+                            <h5>{{ article.publication }}, {{ article.date }}</h5>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+<!--
+        </div>
+        <div class="col">
+            {% for article in articles %}
+                {% if loop.index0 % 3 == 2 %}
+                    <div class="card featured shadow">
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
+                            <h4 class="card-text">{{ article.subtitle }}</h4>
+                            <h5>{{ article.publication }}, {{ article.date }}</h5>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+-->
+    </div>
+{% endblock %}

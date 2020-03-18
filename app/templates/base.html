@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fred Bernstein</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@300;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/featured">Articles by Fred Bernstein</a>
+                <div class="nav-right">
+                    <a class="nav-item" href="/featured">Featured</a>
+                    <a class="nav-item" href="/articles/any/any">Articles</a>
+                    <a class="nav-item" href="/about">About Fred</a>
+                    <a class="nav-item" href="/creativewriting">Creative Writing</a>
+                    <a class="nav-item" href="/designprojects">Design Projects</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+    {% block script %}
+    {% endblock %}
+</html>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add Topic</h1>
+    <form method="post" action="/admin/addtopic/submit">
+        <div class="form-group">
+            <label>Topic</label>
+            <input type="text" name="topic" class="form-control">
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

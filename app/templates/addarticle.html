@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add Article</h1>
+    <form method="post" action="/admin/addarticle/submit">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Subtitle</label>
+            <input type="text" name="subtitle" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Publication</label>
+            <select class="form-control" name="publication">
+                {% for publication in publications %}
+                    <option>{{ publication.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            <input type="text" name="date" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Topic</label>
+            <select class="form-control" name="topic">
+                {% for topic in topics %}
+                    <option>{{ topic.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Featured</label>
+            <input type="checkbox" name="featured" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>URL</label>
+            <input type="text" name="url" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Text</label>
+            <textarea name="text" class="form-control"></textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

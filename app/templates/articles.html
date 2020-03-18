@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-3">
+            <div class="filter-section">
+                <h2>Filter by Topic</h2>
+                {% for topic in topics %}
+                    <h6><a href="/articles/{{ topic.name }}/any">{{ topic.name }}</a></h6>
+                {% endfor %}
+            </div>
+
+            <div class="filter-section">
+                <h2>Filter by Publication</h2>
+                {% for publication in publications %}
+                    <h6><a href="/articles/any/{{ publication.name }}">{{ publication.name }}</a></h6>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-9">
+            {% if viewing is not sameas false %}
+                <h1>{{ viewing }}</h1>
+                <h6 id="back-link"><a href="/articles/any/any">Back to All Articles</a></h6>
+            {% endif %}
+            
+            {% for article in articles %}
+                <div class="article">
+                    <h3><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
+                    <h4>{{ article.subtitle }}</h4>
+                    {% if article.date != '' %}
+                        <h5>{{ article.publication }}, {{ article.date }}</h5>
+                    {% else %}
+                        <h5>{{ article.publication }}</h5>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

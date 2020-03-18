@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-2 button-column">
+            <button class="btn btn-primary"><a href="/admin/addarticle">Add article</a></button>
+            <button class="btn btn-primary"><a href="/admin/addpublication">Add publication</a></button>
+            <button class="btn btn-primary"><a href="/admin/addtopic">Add topic</a></button>
+        </div>
+        <div class="col-8">
+            {% if article_type == 'all' %}
+                <h1 class="smaller-h1">Showing All Articles <small>(<a href="/admin/featured">See Featured Instead</a>)</small></h1>
+            {% else %}
+                <h1 class="smaller-h1">Showing Featured Articles <small>(<a href="/admin/all">See All Instead</a>)</small></h1>
+            {% endif %}
+            {% for article in articles %}
+                <div class="card admin-article-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <h4><a href="/admin/editarticle/{{ article._id }}">{{ article.title }}</a></h4>
+                            </div>
+                            <div class="col-3">
+                                <h4>{{ article.date }}</h4>
+                            </div>
+                            <div class="col-1">
+                                {% if loop.index0 == checked_position %}
+                                    <input type="checkbox" id="{{ article._id }}" checked>
+                                {% else %}
+                                    <input type="checkbox" id="{{ article._id }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-2 button-column">
+            <button class="btn btn-primary" onclick="move('up')">Move up</button>
+            <button class="btn btn-primary" onclick="move('down')">Move down</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    function move(direction) {
+        // Get article id
+        var checkboxes = document.getElementsByTagName('input');
+        var selectedId = null;
+        for(var i = 0; i < checkboxes.length; i++) {
+            if(checkboxes[i].checked) {
+                selectedId = checkboxes[i].id;
+                break;
+            }
+        }
+        
+        // Get article type
+        var header = document.getElementsByClassName('smaller-h1')[0];
+        var articleType;
+        if(header.innerHTML.includes('Showing All Articles')) {
+            articleType = 'all';
+        } else {
+            articleType = 'featured';
+        }
+        
+        if(selectedId != null) {
+            window.location.replace('/admin/move' + direction + '/' + selectedId + '/' + articleType);
+        }
+    }
+</script>
+{% endblock %}

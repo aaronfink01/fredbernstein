@@ -1,0 +1,152 @@
+.navbar {
+    background-color: cornflowerblue;
+    margin-bottom: 50px;
+}
+
+.navbar a {
+    color: white;
+}
+
+.nav-item {
+    margin-left: 30px;
+}
+
+h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: cornflowerblue;
+}
+
+h4 {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+}
+
+h5 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.article {
+    border-bottom: solid 1px black;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.filter-section {
+    background-color: rgba(229, 229, 229);
+    padding: 20px 20px 12px 20px;
+    margin-bottom: 30px;
+}
+
+h6 {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.filter-section a {
+    color: black;
+}
+
+.article a, .featured a {
+    color: cornflowerblue;
+}
+
+.featured {
+    margin-bottom: 30px;
+    border: none;
+}
+
+.page-title {
+    font-family: 'Merriweather', serif;
+    margin-bottom: 30px;
+}
+
+#featured-page-title {
+    text-align: center;
+}
+
+#featured-page-title {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    font-family: 'Merriweather', serif;
+}
+
+body {
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+}
+
+#back-link {
+    margin-bottom: 30px !important;
+}
+
+#back-link a {
+    color: black;
+}
+
+#login-card {
+    width: 400px;
+    margin-top: 50px;
+}
+
+.smaller-h1 {
+    font-size: 28px;
+}
+
+.btn-primary {
+    background-color: cornflowerblue;
+    border: none;
+}
+
+.btn a {
+    color: white;
+}
+
+.btn a:hover {
+    text-decoration: none;
+}
+
+.admin-article-card .card-body {
+    padding: 10px 10px 2px 10px;
+}
+
+.admin-article-card {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-right: 20px;
+}
+
+.button-column button {
+    margin-bottom: 15px;
+}
+
+a {
+    color: cornflowerblue;
+}
+
+textarea {
+    height: 300px !important;
+}
+
+.margin-bottom {
+    margin-bottom: 40px;
+}
