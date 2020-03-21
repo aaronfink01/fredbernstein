@@ -6,10 +6,12 @@
 }
 
 .header-brand {
+    margin-top: 20px;
     display: block;
     text-align: center;
     font-size: 50px;
     font-weight: 500;
+    letter-spacing: 5px;
 }
 
 .header-brand:hover {
@@ -97,6 +99,7 @@ h6 {
 
 #featured-page-title {
     text-align: center;
+    letter-spacing: 2px;
 }
 
 img {
