@@ -1,21 +1,38 @@
-.navbar {
-    background-color: cornflowerblue;
+.header {
+    background-color: royalblue;
     margin-bottom: 50px;
+    padding-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.navbar a {
+.header-brand {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.header-brand:hover {
+    text-decoration: none;
+}
+
+.header a {
     color: white;
 }
 
-.nav-item {
+.header-item {
     margin-left: 30px;
+    font-weight: 100;
+}
+
+.header-menu {
+    margin-left: -30px;
 }
 
 h3 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    font-weight: 900;
-    color: cornflowerblue;
+    color: royalblue;
 }
 
 h4 {
@@ -24,9 +41,10 @@ h4 {
 }
 
 h5 {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-style: italic;
+    font-weight: 300;
 }
 
 .article {
@@ -36,7 +54,7 @@ h5 {
 }
 
 h2 {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 700;
 }
@@ -48,7 +66,8 @@ h2 {
 }
 
 h6 {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
 }
 
 .filter-section a {
@@ -56,7 +75,7 @@ h6 {
 }
 
 .article a, .featured a {
-    color: cornflowerblue;
+    color: royalblue;
 }
 
 .featured {
@@ -71,6 +90,7 @@ h6 {
 
 #featured-page-title {
     text-align: center;
+    font-size: 35px;
 }
 
 #featured-page-title {
@@ -111,7 +131,7 @@ h1 {
 }
 
 .btn-primary {
-    background-color: cornflowerblue;
+    background-color: royalblue;
     border: none;
 }
 
@@ -140,7 +160,7 @@ h1 {
 }
 
 a {
-    color: cornflowerblue;
+    color: royalblue;
 }
 
 textarea {

@@ -7,18 +7,32 @@
         <link rel="stylesheet" type="text/css" href="/static/style.css">
     </head>
     <body>
+<!--
         <nav class="navbar">
             <div class="container">
-                <a class="navbar-brand" href="/featured">Articles by Fred Bernstein</a>
+                <a class="navbar-brand" href="/featured">Fred A. Bernstein</a>
                 <div class="nav-right">
-                    <a class="nav-item" href="/featured">Featured</a>
-                    <a class="nav-item" href="/articles/any/any">Articles</a>
+                    <a class="nav-item" href="/articles/any/any">All Articles</a>
+                    <a class="nav-item" href="/featured">Featured Articles</a>
                     <a class="nav-item" href="/about">About Fred</a>
                     <a class="nav-item" href="/creativewriting">Creative Writing</a>
                     <a class="nav-item" href="/designprojects">Design Projects</a>
                 </div>
             </div>
         </nav>
+-->
+        <div class="header">
+            <div class="container">
+                <a class="header-brand" href="/featured">Fred A. Bernstein</a>
+                <div class="header-menu d-flex justify-content-center">
+                    <a class="header-item" href="/articles/any/any">All Articles</a>
+                    <a class="header-item" href="/featured">Featured Articles</a>
+                    <a class="header-item" href="/about">About Fred</a>
+                    <a class="header-item" href="/creativewriting">Creative Writing</a>
+                    <a class="header-item" href="/designprojects">Design Projects</a>
+                </div>
+            </div>
+        </div>
         <div class="container">
             {% block content %}
             {% endblock %}
