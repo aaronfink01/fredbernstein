@@ -8,7 +8,7 @@
     padding-top: 10px;
     display: block;
     text-align: center;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Mukta', sans-serif;
     font-size: 50px;
     font-weight: 700;
 }
@@ -62,7 +62,7 @@ h2 {
 }
 
 .filter-section {
-    background-color: rgb(26,105,165);
+    background-color: rgb(229, 229, 229);
     padding: 20px 20px 12px 20px;
     margin-bottom: 30px;
 }
