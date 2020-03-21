@@ -38,14 +38,14 @@ h3 {
 }
 
 h4 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
     font-size: 16px;
 }
 
 h5 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Times New Roman', sans-serif;
     font-size: 16px;
-    font-style: italic;
     font-weight: 300;
 }
 
