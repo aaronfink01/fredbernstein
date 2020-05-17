@@ -165,7 +165,12 @@ def admineditarticlesubmit(article_id):
     topic = request.form.get('topic')
     featured = 'featured' in request.form
     url = request.form['url']
+    text = request.form['text']
     all_position = old_article['all_position']
+    
+    # Separate the paragraphs
+    if text != '':
+        paragraphs = text.split('\r\n\r\n')
     
     # Remove the old version of the article
     article_collection.remove({'_id': ObjectId(article_id)})
@@ -173,21 +178,21 @@ def admineditarticlesubmit(article_id):
     if featured == old_article['featured']:
         # Add the new article to the database
         if featured:
-            article_collection.insert({'title': title, 'subtitle': subtitle, 'publication': publication, 'date': date, 'url': url, 'topic': topic, 'featured': True, 'all_position': all_position, 'featured_position': old_article['featured_position']})
+            article_collection.insert({'_id': ObjectId(article_id), 'title': title, 'subtitle': subtitle, 'publication': publication, 'date': date, 'url': url, 'topic': topic, 'featured': True, 'paragraphs': paragraphs, 'all_position': all_position, 'featured_position': old_article['featured_position']})
         else:
-            article_collection.insert({'title': title, 'subtitle': subtitle, 'publication': publication, 'date': date, 'url': url, 'topic': topic, 'featured': False, 'all_position': all_position})
+            article_collection.insert({'_id': ObjectId(article_id), 'title': title, 'subtitle': subtitle, 'publication': publication, 'date': date, 'url': url, 'topic': topic, 'featured': False, 'paragraphs': paragraphs, 'all_position': all_position})
     elif featured:
         articles = article_collection.find({'featured': True})
         for article in articles:
             article_collection.update({'_id': article['_id']}, {'$inc': {'featured_position': 1}})
-        article_collection.insert({'title': title, 'subtitle': subtitle, 'publication': publication, 'date': date, 'url': url, 'topic': topic, 'featured': True, 'all_position': all_position, 'featured_position': 0})
+        article_collection.insert({'_id': ObjectId(article_id), 'title': title, 'subtitle': subtitle, 'publication': publication, 'date': date, 'url': url, 'topic': topic, 'featured': True, 'paragraphs': paragraphs, 'all_position': all_position, 'featured_position': 0})
     else:
         old_featured_position = old_article['featured_position']
         articles = article_collection.find({'featured': True})
         for article in articles:
             if article['featured_position'] > old_featured_position:
                 article_collection.update({'_id': article['_id']}, {'$inc': {'featured_position': -1}})
-        article_collection.insert({'title': title, 'subtitle': subtitle, 'publication': publication, 'date': date, 'url': url, 'topic': topic, 'featured': False, 'all_position': all_position})
+        article_collection.insert({'_id': ObjectId(article_id), 'title': title, 'subtitle': subtitle, 'publication': publication, 'date': date, 'url': url, 'topic': topic, 'featured': False, 'paragraphs': paragraphs, 'all_position': all_position})
     
     if featured:
         return redirect('/admin/featured')
@@ -279,6 +284,7 @@ def adminmovedown(article_id, article_type):
 def articletext(article_id):
     article_collection = mongo.db.articles
     article = article_collection.find_one({'_id': ObjectId(article_id)})
+    print(article)
     return render_template('articletext.html', article=article)
 
 @app.route('/creativewriting')
