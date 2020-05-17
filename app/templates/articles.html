@@ -27,9 +27,13 @@
                 <div class="article">
                     <h3><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
                     <h4>{{ article.subtitle }}</h4>
-                    {% if article.date != '' %}
+                    {% if article.date != '' and article.publication != 'fredbernstein.com' %}
                         <h5>{{ article.publication }}, {{ article.date }}</h5>
-                    {% else %}
+                    {% endif %}
+                    {% if article.date != '' and article.publication == 'fredbernstein.com'}
+                        <h5>{{ article.date }}</h5>
+                    {% endif %}
+                    {% if article.date == '' and article.publication != 'fredbernstein.com'}
                         <h5>{{ article.publication }}</h5>
                     {% endif %}
                 </div>
