@@ -143,7 +143,10 @@ def admineditarticle(article_id):
     
     article_collection = mongo.db.articles
     article = article_collection.find_one({'_id': ObjectId(article_id)})
-    article['text'] = '\n\n'.join([paragraph if paragraph else 'Missing paragraph' for paragraph in article['paragraphs']])
+    if 'paragraphs' in article:
+        article['text'] = '\n\n'.join([paragraph if paragraph else 'Missing paragraph' for paragraph in article['paragraphs']])
+    else:
+        article['text'] = ''
     topic_collection = mongo.db.topics
     topics = topic_collection.find({})
     publication_collection = mongo.db.publications
