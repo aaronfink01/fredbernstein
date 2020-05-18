@@ -175,6 +175,8 @@ def admineditarticlesubmit(article_id):
     # Separate the paragraphs
     if text != '':
         paragraphs = text.split('\r\n\r\n')
+    else:
+        paragraphs = []
     
     # Remove the old version of the article
     article_collection.remove({'_id': ObjectId(article_id)})
