@@ -91,15 +91,14 @@ h6 {
 }
 
 #featured-page-title {
+/*
     text-align: center;
     font-size: 35px;
     font-family: 'Montserrat', sans-serif;
-    color: black;
-}
-
-#featured-page-title {
+    color: red;
     text-align: center;
     letter-spacing: 2px;
+*/
 }
 
 img {
