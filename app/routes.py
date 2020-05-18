@@ -23,6 +23,18 @@ def featured():
 @app.route('/articles/<topic>/<publication>')
 def articles(topic, publication):
     
+    # Make sure the topic and publication are valid
+    if topic != 'any' and publication != 'any':
+        return redirect('/articles/any/any')
+    if topic != 'any':
+        topic_collection = mongo.db.topics
+        if topic_collection.find_one({'name': topic}) == None:
+            return redirect('/articles/any/any')
+    if publication != 'any':
+        publication_collection = mongo.db.publications
+        if publication_collection.find_one({'name': publication}) == None:
+            return redirect('/articles/any/any')
+    
     # Find the relevant articles
     article_collection = mongo.db.articles
     if topic == 'any' and publication == 'any':
